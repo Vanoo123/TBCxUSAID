@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "tbcBOLD";
+  src: url(../fonts/TBCContractica-Black.ttf) format("truetype");
+}
+@font-face {
+  font-family: "tbcMEDIUM";
+  src: url(../fonts/TBCContractica-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "tbcLIGHT";
+  src: url(../fonts/TBCContractica-Light.ttf) format("truetype");
+}

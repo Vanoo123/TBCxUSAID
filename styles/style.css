@@ -9,8 +9,7 @@ html {
 }
 
 body {
-  /* background-color: red;
-  height: 500vh; */
+  font-family: "tbcMEDIUM", sans-serif;
 }
 
 header {
@@ -76,13 +75,13 @@ a {
 }
 .navbar {
   display: flex;
-  gap: 25px;
+  gap: 50px;
 }
 
 .navbar a {
-  padding: 0 10px;
   color: #f4f4f4;
   line-height: 26px;
+  font-size: 14px;
   transition: all 0.4s ease;
 }
 
@@ -233,7 +232,7 @@ a {
 .hero_title {
   margin-top: 85px;
   display: flex;
-  gap: 25px;
+  gap: 45px;
   flex-direction: column;
   color: #f4f4f4;
   line-height: 1.6em;
@@ -241,10 +240,12 @@ a {
 
 .hero_title h1 {
   font-size: 42px;
+  font-family: "tbcBOLD", sans-serif;
 }
 
 .hero_title h2 {
-  line-height: normal;
+  /* line-height: normal; */
+  font-family: "tbcBOLD", sans-serif;
   font-size: 38px;
 }
 
@@ -274,7 +275,7 @@ a {
 .description_items a {
   color: #00aef3;
   transition: all 0.5s ease;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   width: 130px;
 }
@@ -294,9 +295,9 @@ a {
 }
 
 .cards_title h1 {
-  font-size: 26px;
+  font-size: 20px;
   color: #f4f4f4;
-  font-weight: 100;
+  font-family: "tbcLIGHT", sans-serif;
 }
 
 /* Card styles */
@@ -330,12 +331,12 @@ a {
 }
 
 .card_content h2 {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 100;
 }
 
 .card_content p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 100;
 }
 
@@ -350,14 +351,14 @@ a {
 .card_info {
   padding: 85px 15px 15px 15px;
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 
 .card_info a {
-  font-size: 18px;
+  font-size: 16px;
   color: #00aef3;
   transition: all 0.5s ease;
-  font-weight: bold;
 }
 
 .card_info a:hover {
