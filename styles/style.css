@@ -20,7 +20,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 li {
@@ -50,14 +50,20 @@ a {
 /* GLOBAL CLASSES END */
 
 /* FIRST SECTION CLASSES */
+/* HEADER STYLES START */
+
+.overflow_hidden {
+  overflow: hidden;
+}
 
 .scrolled {
-  opacity: 0.85;
+  background-color: rgba(26, 30, 31, 0.9);
 }
 
 .header_wrapper {
   align-items: center;
   padding-top: 5px;
+  height: 50px;
 }
 
 .site_logo {
@@ -82,4 +88,138 @@ a {
 
 .navbar a:hover {
   color: #00a3e0;
+}
+
+.mobile_burger {
+  display: none;
+  margin-right: 5%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.mobile_burger div {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.mobile_burger span {
+  background: #f4f4f4;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  transition: transform 0.5s, width 0.5s;
+}
+
+.mobile_burger .line-1 {
+  width: 50%;
+  transform: translate(0, -10px);
+  transform-origin: 100% 100%;
+}
+
+.mobile_burger .line-3 {
+  width: 50%;
+  left: auto;
+  right: 0;
+  transform: translate(100%, 10px);
+  transform-origin: 0 0;
+}
+
+.openmenu .line-1 {
+  transform: translate(-4px, -5px) rotate(45deg);
+}
+
+.openmenu .line-3 {
+  transform: translate(18px, -1px) rotate(45deg);
+}
+
+.openmenu .line-2 {
+  transform: translate(0, -100%) rotate(-45deg);
+}
+
+.gray_button span {
+  background: #f4f4f460;
+}
+
+.hide {
+  right: -100%;
+}
+
+.hide2 {
+  width: 0;
+}
+
+.show {
+  right: 0;
+}
+
+.show2 {
+  width: 100%;
+}
+
+.blur_background {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  top: 0;
+  position: fixed;
+}
+
+.mobile_menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.mobile_nav {
+  background: #1a1e1f;
+  position: sticky;
+  left: 100%;
+  width: 59%;
+  height: 100%;
+  padding: 40px 20px 40px 40px;
+}
+
+.mobile_nav ul {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile_nav li {
+  display: flex;
+  justify-content: end;
+}
+
+.mobile_nav a {
+  color: #f4f4f4;
+  transition: all 0.4s ease;
+}
+
+.mobile_nav a:hover {
+  color: #00a3e0;
+}
+/* HEADER STYLES END */
+.image {
+  background-image: url("/images/banner.webp");
+  height: 500px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/* Mobile Resolution */
+
+@media (max-width: 1024px) {
+  .desktop_navbar {
+    display: none;
+  }
+  .mobile_burger {
+    display: flex;
+  }
 }
