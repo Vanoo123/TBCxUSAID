@@ -1,13 +1,34 @@
 // Changing opacity on Y scroll
 
-document.addEventListener("scroll", () => {
-  const header = document.getElementById("main-header");
+let prevScrollPos = window.scrollY;
+let scrolledDown = false;
 
-  if (window.scrollY > 0) {
-    header.classList.add("scrolled");
+document.addEventListener("scroll", () => {
+  // Changing opacity on Y scroll
+  const header = document.getElementById("main-header");
+  header.classList.toggle("scrolled", window.scrollY > 0);
+
+  // Hiding/showing header on scroll
+  const currentScrollPos = window.scrollY;
+
+  if (prevScrollPos > currentScrollPos) {
+    // Scrolling up
+    scrolledDown = false;
   } else {
-    header.classList.remove("scrolled");
+    // Scrolling down
+    scrolledDown = true;
   }
+
+  if (scrolledDown && currentScrollPos > 50) {
+    // Apply scrolled-down class only if scrolled down and not at the top
+    header.classList.remove("scrolled-up");
+    header.classList.add("scrolled-down");
+  } else {
+    // Remove both classes if not scrolled down or at the top
+    header.classList.remove("scrolled-up", "scrolled-down");
+  }
+
+  prevScrollPos = currentScrollPos;
 });
 
 // For Burger Rotation & opening menu
