@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobile = document.getElementById("mobile");
   const blur = document.getElementById("blur");
 
-  burger.addEventListener("click", () => {
+  // Function to toggle the menu
+  const toggleMenu = () => {
     burger.classList.toggle("openmenu");
     mobile.classList.toggle("show");
     mobile.classList.toggle("hide");
@@ -45,5 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
     blur.classList.toggle("hide2");
     burger.classList.toggle("gray_button");
     document.body.classList.toggle("overflow_hidden");
-  });
+  };
+
+  // Attach the toggleMenu function to the burger click event
+  burger.addEventListener("click", toggleMenu);
+
+  // Function to close the menu when the screen size is increased
+  const closeMenuOnResize = () => {
+    // Check if the menu is open and the screen size is greater than a certain breakpoint (e.g., 768px)
+    if (burger.classList.contains("openmenu") && window.innerWidth > 1024) {
+      toggleMenu(); // Close the menu
+    }
+  };
+
+  // Attach the closeMenuOnResize function to the window resize event
+  window.addEventListener("resize", closeMenuOnResize);
 });
