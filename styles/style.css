@@ -369,6 +369,97 @@ a {
 
 /* Second Section Styles */
 
+/* Fourth Section Styles */
+
+.fourth_section {
+  background-color: #161616;
+  font-family: "tbcLIGHT", sans-serif;
+}
+
+.accordion {
+  padding: 85px 35px 35px 35px;
+}
+
+.accordion_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion_title h2 {
+  color: #f4f4f4;
+  font-size: 24px;
+}
+
+.accordion_title a {
+  font-family: "tbcMEDIUM", sans-serif;
+  color: #00aef3;
+}
+
+.faq {
+  /* max-width: 700px; */
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #353131;
+  cursor: pointer;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h3 {
+  font-family: "tbcLIGHT", sans-serif;
+  color: #f4f4f4;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.answer p,
+span {
+  font-family: "tbcLIGHT", sans-serif;
+  font-weight: 100;
+  color: #f4f4f4;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.faq.active .answer {
+  max-height: 300px;
+  animation: fade 1s ease-in-out;
+}
+
+.faq img {
+  transform: rotate(90deg);
+}
+
+.faq.active img {
+  transform: rotate(270deg);
+}
+
+/* Animation For FAQ-Accordion */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Styles END */
+
 /* Mobile Resolution */
 @media (max-width: 1024px) {
   /* First Section Responsive */
@@ -385,10 +476,10 @@ a {
     margin-top: 50px;
   }
   .hero_title h1 {
-    font-size: 34px;
+    font-size: 28px;
   }
   .hero_title h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
   .hero_title {
     gap: 15px;

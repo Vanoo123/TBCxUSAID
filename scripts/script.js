@@ -62,3 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach the closeMenuOnResize function to the window resize event
   window.addEventListener("resize", closeMenuOnResize);
 });
+
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    // Remove "active" class from all other faqs
+    faqs.forEach((otherFaq) => {
+      if (otherFaq !== faq) {
+        otherFaq.classList.remove("active");
+      }
+    });
+
+    // Toggle "active" class for the clicked FAQ
+    faq.classList.toggle("active");
+  });
+});
