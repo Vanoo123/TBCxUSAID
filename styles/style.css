@@ -244,7 +244,6 @@ a {
 }
 
 .hero_title h2 {
-  /* line-height: normal; */
   font-family: "tbcBOLD", sans-serif;
   font-size: 38px;
 }
@@ -285,6 +284,7 @@ a {
 }
 
 /* HERO STYLES END */
+/*  */
 
 /* Second Section Styles */
 
@@ -368,6 +368,11 @@ a {
 /* Card styles */
 
 /* Second Section Styles */
+/*  */
+
+/* Third Section Styles */
+
+/*  */
 
 /* Fourth Section Styles */
 
@@ -378,6 +383,8 @@ a {
 
 .accordion {
   padding: 85px 35px 35px 35px;
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion_title {
@@ -391,13 +398,12 @@ a {
   font-size: 24px;
 }
 
-.accordion_title a {
+.move_hyperlink a {
   font-family: "tbcMEDIUM", sans-serif;
   color: #00aef3;
 }
 
 .faq {
-  /* max-width: 700px; */
   margin-top: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #353131;
@@ -423,17 +429,34 @@ a {
   transition: max-height 0.5s ease-in-out;
 }
 
-.answer p,
-span {
+.answer_title {
+  margin: 35px 0 0 4px;
+}
+
+.answer span {
+  font-family: "tbcLIGHT", sans-serif;
+  font-weight: 200;
+  color: #f4f4f4;
+  line-height: 2;
+  font-size: 14px;
+  display: flex;
+}
+
+.first_answer {
+  padding: 25px;
+}
+
+.answer p {
   font-family: "tbcLIGHT", sans-serif;
   font-weight: 100;
   color: #f4f4f4;
   line-height: 2;
   font-size: 14px;
+  padding: 25px 0 0 5px;
 }
 
 .faq.active .answer {
-  max-height: 300px;
+  max-height: 800px;
   animation: fade 1s ease-in-out;
 }
 
@@ -443,6 +466,15 @@ span {
 
 .faq.active img {
   transform: rotate(270deg);
+}
+/*  */
+
+.fifth_section {
+  background-color: #1b1e1e;
+}
+
+.hyperlink {
+  display: none;
 }
 
 /* Animation For FAQ-Accordion */
@@ -510,5 +542,17 @@ span {
 
   .scrolled-down {
     transform: translateY(-100%);
+  }
+
+  .accordion .move_hyperlink {
+    order: 3;
+  }
+
+  .move_hyperlink {
+    display: none;
+  }
+
+  .hyperlink {
+    display: flex;
   }
 }
