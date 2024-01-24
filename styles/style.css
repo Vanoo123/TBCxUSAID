@@ -46,6 +46,10 @@ a {
   padding: 18px;
 }
 
+.hover_color:hover {
+  color: #f4f4f486;
+}
+
 /* GLOBAL CLASSES END */
 
 /* FIRST SECTION CLASSES */
@@ -279,10 +283,6 @@ a {
   width: 130px;
 }
 
-.description_items a:hover {
-  color: #f4f4f486;
-}
-
 /* HERO STYLES END */
 /*  */
 
@@ -370,6 +370,101 @@ a {
 
 /* Third Section Styles */
 
+.third_section {
+  position: relative;
+  background-color: #2b2b2b;
+}
+
+.slider_title {
+  margin-top: 25px;
+  color: #f4f4f4;
+  font-family: "tbcLIGHT", sans-serif;
+  padding-bottom: 20px;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 253px;
+}
+
+.slide {
+  display: flex;
+  box-sizing: border-box;
+  gap: 50px;
+  opacity: 1;
+  transition: opacity 1s, visibility 1s;
+}
+
+.slide img {
+  padding-right: 50px;
+  aspect-ratio: 1/1;
+  display: flex;
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.prev,
+.next {
+  display: flex;
+  /* Hide arrows on mobile */
+  margin-left: 100px;
+  margin-right: 100px;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  color: white;
+  font-weight: 100;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 0.5;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
 /*  */
 
 /* Fourth Section Styles */
@@ -397,6 +492,7 @@ a {
 }
 
 .desktop_link a {
+  transition: all 0.4s ease-in-out;
   font-family: "tbcMEDIUM", sans-serif;
   color: #00aef3;
   font-size: 20px;
@@ -408,6 +504,7 @@ a {
 }
 
 .mobile_link a {
+  transition: all 0.4s ease-in-out;
   color: #00aef3;
   font-family: "tbcMEDIUM", sans-serif;
   font-size: 20px;
@@ -607,7 +704,27 @@ footer {
   }
   /*  */
   /* Third Section Responsive */
+  .slides {
+    height: 352px;
+  }
+  .slide {
+    gap: 0;
+    padding: 50px 0 50px 0px;
+  }
+  .slide img {
+    padding-right: 0;
+    height: 98px;
+    aspect-ratio: 3/1;
+  }
 
+  .prev,
+  .next {
+    display: none;
+  }
+
+  .slide {
+    flex-direction: column;
+  }
   /*  */
   /* Fourth Section Responsive */
   .accordion {

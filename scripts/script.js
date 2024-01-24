@@ -80,3 +80,99 @@ faqs.forEach((faq) => {
     faq.classList.toggle("active");
   });
 });
+
+// SLIDER SCRIPT
+
+let currentSlide = 0;
+let touchStartX;
+let interval;
+let touched = true;
+let IsMoving = false;
+
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+
+function changeSlide(direction, paging = -1) {
+  if (!IsMoving) {
+    IsMoving = true;
+    clearInterval(interval);
+    setint();
+
+    currentSlide = direction == 1 ? currentSlide + 1 : currentSlide - 1;
+    currentSlide = paging >= 0 ? paging : currentSlide;
+
+    if (currentSlide < 0) {
+      currentSlide = totalSlides - 1;
+    } else if (currentSlide >= totalSlides) {
+      currentSlide = 0;
+    }
+
+    let current = document.querySelector('div[index="' + currentSlide + '"]');
+
+    slides.forEach((o, i) => {
+      o.style.opacity = i == currentSlide ? 1 : 0;
+      o.style.visibility = i == currentSlide ? "visible" : "hidden";
+    });
+
+    updatePagination();
+
+    setTimeout(() => {
+      IsMoving = false;
+    }, 1000);
+  }
+}
+
+function createPagination() {
+  const pagination = document.getElementById("pagination");
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => {
+      changeSlide(0, i);
+    });
+    pagination.appendChild(dot);
+  }
+  updatePagination();
+}
+
+function updatePagination() {
+  const dots = document.querySelectorAll(".dot");
+  dots.forEach((dot, index) => {
+    if (index === currentSlide) {
+      dot.classList.add("active");
+    } else {
+      dot.classList.remove("active");
+    }
+  });
+}
+
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  const touchEndX = event.touches[0].clientX;
+  const touchDiff = touchStartX - touchEndX;
+
+  if (touched) {
+    if (touchDiff > 50) {
+      changeSlide(1);
+    } else if (touchDiff < -50) {
+      changeSlide(-1);
+    }
+    touched = touchDiff > 50 || touchDiff < -50 ? false : true;
+  }
+}
+
+function handleTouchEnd() {
+  touched = true;
+}
+
+function setint() {
+  interval = setInterval(() => {
+    changeSlide(1);
+  }, 5000);
+}
+
+createPagination();
+setint();

@@ -134,7 +134,7 @@
                         მიმართულებით. წარმატებულ კურსდამთავრებულებს ეძლევათ შესაძლებლობა დასაქმდნენ თიბისისა და მის
                         პარტნიორ კომპანიებში.
                     </h2>
-                    <a href="#">გაიგე მეტი</a>
+                    <a href="#" class="hover_color">გაიგე მეტი</a>
                 </div>
             </div>
         </div>
@@ -285,7 +285,34 @@
         </div>
     </section>
     <section class="third_section">
-        <div>SLIDER</div>
+        <div class="container">
+            <div class="slider_title">
+                <h1>პროექტის პარტნიორები</h1>
+            </div>
+            <div class="slider-container" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)"
+                ontouchend="handleTouchEnd()">
+                <div class="slides"">
+                    <div class=" slide" index="0" style="position: absolute;">
+                    <img src="images/slider1.webp" alt="Slide 1 Image 1">
+                    <img src="images/slider2.webp" alt="Slide 1 Image 2">
+                    <img src="images/slider3.webp" alt="Slide 1 Image 3">
+                </div>
+                <div class="slide" index="1" style="position: absolute;visibility: hidden;opacity: 0;">
+                    <img src="images/slider4.webp" alt="Slide 2 Image 1">
+                    <img src="images/slider5.webp" alt="Slide 2 Image 2">
+                    <img src="images/slider6.webp" alt="Slide 2 Image 3">
+                </div>
+                <div class="slide" index="2" style="position: absolute;visibility: hidden;opacity: 0;">
+                    <img src="images/slider7.webp" alt="Slide 3 Image 1">
+                </div>
+            </div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+        </div>
+        <div>
+            <div class="prev" onclick="changeSlide(-1)">❮</div>
+            <div class="next" onclick="changeSlide(1)">❯</div>
+        </div>
     </section>
     <section class="fourth_section">
         <div class="container">
@@ -295,7 +322,7 @@
                         <h2>ხშირად დასმული კითხვები</h2>
                     </div>
                     <div class="desktop_link">
-                        <a href="#">ყველა კითხვა</a>
+                        <a href="#" class="hover_color">ყველა კითხვა</a>
                     </div>
                 </div>
                 <div class="faq">
@@ -369,7 +396,7 @@
                     </div>
                 </div>
                 <div class="mobile_link">
-                    <a href="#">ყველა კითხვა</a>
+                    <a href="#" class="hover_color">ყველა კითხვა</a>
                 </div>
             </div>
         </div>
