@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", closeMenuOnResize);
 });
 
+// FAQ ACCORDION SCRIPT
+
 const faqs = document.querySelectorAll(".faq");
 
 faqs.forEach((faq) => {
