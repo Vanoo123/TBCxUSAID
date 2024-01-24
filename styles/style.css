@@ -366,8 +366,6 @@ a {
 }
 
 /* Card styles */
-
-/* Second Section Styles */
 /*  */
 
 /* Third Section Styles */
@@ -398,9 +396,10 @@ a {
   font-size: 24px;
 }
 
-.move_hyperlink a {
+.desktop_link a {
   font-family: "tbcMEDIUM", sans-serif;
   color: #00aef3;
+  font-size: 20px;
 }
 
 .faq {
@@ -456,7 +455,7 @@ a {
 }
 
 .faq.active .answer {
-  max-height: 800px;
+  max-height: 1200px;
   animation: fade 1s ease-in-out;
 }
 
@@ -469,13 +468,23 @@ a {
 }
 /*  */
 
+/* Fifth Section Styles */
+
 .fifth_section {
   background-color: #1b1e1e;
 }
 
-.hyperlink {
+.mobile_link {
   display: none;
+  margin-top: 25px;
 }
+
+.mobile_link a {
+  color: #00aef3;
+  font-family: "tbcMEDIUM", sans-serif;
+  font-size: 20px;
+}
+/*  */
 
 /* Animation For FAQ-Accordion */
 
@@ -531,6 +540,7 @@ a {
     font-size: 18px;
     padding-bottom: 25px;
   }
+  /*  */
   /* Second Section Responsive */
   .card_info {
     padding: 0 20px 20px 20px;
@@ -543,16 +553,27 @@ a {
   .scrolled-down {
     transform: translateY(-100%);
   }
+  /*  */
+  /* Third Section Responsive */
 
-  .accordion .move_hyperlink {
+  /*  */
+  /* Fourth Section Responsive */
+  .accordion {
+    padding: 45px 15px 25px 15px;
+  }
+
+  .accordion .desktop_link {
     order: 3;
   }
 
-  .move_hyperlink {
+  .desktop_link {
     display: none;
   }
 
-  .hyperlink {
+  .mobile_link {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  /*  */
 }
